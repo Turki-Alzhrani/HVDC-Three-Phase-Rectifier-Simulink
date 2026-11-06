@@ -26,7 +26,7 @@ This project simulates stepping up **400 V AC** to **40 kV AC** using a three-ph
 |:---:|:---:|:---:|
 | ![Input](images/input-ac-waveforms.png) | ![Step-up](images/secondary-ac-waveforms.png) | ![DC](images/rectified-dc-waveform.png) |
 
-*Waveform images are from the project report; the numerical results above are from the latest circuit screenshot.*
+
 
 ## Run
 
