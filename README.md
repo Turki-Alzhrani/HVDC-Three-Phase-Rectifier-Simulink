@@ -73,11 +73,11 @@ The three-phase transformer is configured with a **Y–Y connection** and a nomi
 
 For the nominal voltages:
 
-\`\`\`text
+```text
 Transformer voltage ratio = 40,000 V / 400 V = 100
 Secondary voltage ≈ 100 × Primary voltage
 Secondary voltage ≈ 40,000 V RMS (line-to-line)
-\`\`\`
+```
 
 This stage produces the high-voltage AC input required for the rectifier.
 
@@ -87,9 +87,9 @@ Six diodes form a **three-phase full-wave (six-pulse) rectifier**. During operat
 
 For an ideal bridge, the instantaneous DC-side rectified voltage is related to the difference between the highest and lowest instantaneous phase voltages:
 
-\`\`\`text
+```text
 v_dc(t) = max(v_a, v_b, v_c) − min(v_a, v_b, v_c)
-\`\`\`
+```
 
 This expression describes an ideal uncontrolled bridge *before* accounting for capacitor filtering, diode drops, and other nonideal effects.
 
@@ -218,9 +218,9 @@ These basic equations help interpret the simulation. The calculations below are 
 
 ### 6.1 Transformer voltage ratio
 
-\`\`\`text
+```text
 Voltage ratio = 40,000 / 400 = 100
-\`\`\`
+```
 
 The nominal secondary voltage is 100 times the primary line-to-line voltage.
 
@@ -228,11 +228,11 @@ The nominal secondary voltage is 100 times the primary line-to-line voltage.
 
 For a sinusoidal secondary line-to-line RMS voltage of 40 kV:
 
-\`\`\`text
+```text
 V_LL,peak = sqrt(2) × V_LL,RMS
           = sqrt(2) × 40,000
           ≈ 56,569 V
-\`\`\`
+```
 
 The displayed filtered output (56,161.41 V) is near this ideal peak level, which is qualitatively consistent with a capacitor-filtered three-phase diode bridge.
 
@@ -240,11 +240,11 @@ The displayed filtered output (56,161.41 V) is near this ideal peak level, which
 
 For an ideal, uncontrolled three-phase bridge **without capacitor smoothing** and under the usual continuous-conduction assumption:
 
-\`\`\`text
+```text
 V_DC,average ≈ 1.35 × V_LL,RMS
              ≈ 1.35 × 40,000
              ≈ 54,000 V
-\`\`\`
+```
 
 This **54 kV** reference describes the ideal *unfiltered* average. It is not the same measurement condition as a capacitor-filtered output, which can approach the peak line-to-line voltage.
 
@@ -252,11 +252,11 @@ This **54 kV** reference describes the ideal *unfiltered* average. It is not the
 
 Using Ohm's law and the most recent displayed DC voltage:
 
-\`\`\`text
+```text
 I_DC = V_DC / R
      = 56,161.41 / 10,000
      ≈ 5.616 A
-\`\`\`
+```
 
 This agrees with the displayed **5.62 A**, after rounding.
 
@@ -264,11 +264,11 @@ This agrees with the displayed **5.62 A**, after rounding.
 
 For a 60 Hz three-phase supply, the ideal six-pulse rectification ripple repeats six times per AC cycle:
 
-\`\`\`text
+```text
 f_ripple = 6 × f_source
          = 6 × 60
          = 360 Hz
-\`\`\`
+```
 
 The capacitor reduces the ripple amplitude, but the available screenshots do not provide enough numerical information to calculate the exact ripple percentage.
 
@@ -276,11 +276,11 @@ The capacitor reduces the ripple amplitude, but the available screenshots do not
 
 The output power implied by the latest DC voltage and the **10 kΩ** load is:
 
-\`\`\`text
+```text
 P_DC = V_DC² / R
      = (56,161.41)² / 10,000
      ≈ 315.4 kW
-\`\`\`
+```
 
 This is an important **consistency check**, not proof that the model represents a physically feasible transformer. The calculated load demand is much greater than the transformer's recorded nominal power parameter of **50 kVA**. This mismatch must be resolved before making claims about efficiency, transformer loading, or physical feasibility.
 
@@ -357,10 +357,10 @@ The saved model metadata indicates **MATLAB R2023b**. Compatibility and block av
 
 You can also open and run the model from MATLAB, if the required toolboxes and blocks are available:
 
-\`\`\`matlab
+```matlab
 open_system('HVDC_Simu.slx');
 sim('HVDC_Simu');
-\`\`\`
+```
 
 **Note:** Model compatibility, numerical results, and behavior may differ by MATLAB version or simulation settings. The values shown in this README are the supplied recorded results; they are not guaranteed outputs on every system.
 
@@ -368,7 +368,7 @@ sim('HVDC_Simu');
 
 ## 10. Repository structure
 
-\`\`\`text
+```text
 HVDC-Three-Phase-Rectifier-Simulink/
 ├── HVDC_Simu.slx
 ├── README.md
@@ -377,7 +377,7 @@ HVDC-Three-Phase-Rectifier-Simulink/
     ├── input-ac-waveforms.png
     ├── secondary-ac-waveforms.png
     └── rectified-dc-waveform.png
-\`\`\`
+```
 
 Only the editable simulation model, its README, and the referenced images are included. The original course-report Word document and student identification numbers are intentionally not published.
 
