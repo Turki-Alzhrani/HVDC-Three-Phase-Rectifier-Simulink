@@ -39,6 +39,4 @@ Open **[HVDC_Simu.slx](HVDC_Simu.slx)** in MATLAB/Simulink with the required Sim
 - Khalid Muteb Alhulayfi
 - Abdulrahman Abdullah Alosaimi
 
-**Taif University — Electrical Engineering | High Voltage Engineering (2026)**
 
-> **Note:** Educational simulation only. The model's 50 kVA transformer rating is inconsistent with the displayed DC load power (~315 kW); results should not be treated as a validated hardware design.
